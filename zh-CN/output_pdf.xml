@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "LuoYunCloud_UserGuide.ent">
+%BOOK_ENTITIES;
+]>
+<chapter id="chap-output-pdf">
+  <title>输出 PDF 格式</title>
+
+  <warning>
+    <para>中文 PDF 输出，我测试有问题，有空在试试。请大家先用 HTML 输出。</para>
+  </warning>
+
+  <section id="sect-output-pdf-base">
+    <title>基本</title>
+    <screen><command>publican build --formats pdf --lang zh-CN ...</command></screen>
+  </section>
+  
+  <section id="sect-output-pdf-faq">
+    <title>FAQ</title>
+    <orderedlist>
+      <listitem>
+	<para>Couldn't find hyphenation pattern zh_cn</para>
+	<screen>
+Couldn't find hyphenation pattern zh_cn
+Error while rendering page 1
+java.lang.NullPointerException: Parameter alpha must not be null
+
+Exception
+org.apache.fop.apps.FOPException: Parameter alpha must not be null
+java.lang.NullPointerException: Parameter alpha must not be null
+
+
+FOP error, PDF generation failed. Check log for details.
+ at /usr/bin/publican line 763
+	</screen>
+	<para>这个问题是没有中文 hyphenation，我没有找到好的关闭方法，但是可以编辑 <command>/usr/share/publican/xsl/pdf.xsl</command> 多处如下标记为 false </para>
+
+	<programlisting language="XML">
+<![CDATA[
+<xsl:param name="hyphenate">true</xsl:param>
+]]>
+	</programlisting>
+      </listitem>
+    </orderedlist>
+  </section>
+
+</chapter>
+

@@ -1,0 +1,422 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "LuoYunCloud_UserGuide.ent">
+%BOOK_ENTITIES;
+]>
+<chapter id="chap-base-grammar">
+  <title>基本语法</title>
+  <para>
+    本章主要是基本语法
+  </para>
+
+  <section>
+    <title>段落</title>
+
+
+    <section>
+      <title>单一段落</title>
+      <para>
+	段落用 &lt;section&gt; 表示，需要有完整信息，有 &lt;title&gt; 、同 &lt;para&gt; 一样的 block 元素。示例：
+      </para>
+      <programlisting>
+<![CDATA[
+<section id="可以没有，格式：英文字符，全局唯一，可以被引用">
+  <title>段落标题不可缺少</title>
+  <para>
+    正文
+  </para>
+</section>
+]]>
+      </programlisting>
+    </section>
+    
+
+    <section>
+      <title>多级段落</title>
+      <para>
+	&lt;section&gt; 可以嵌套，但是要有完整信息，有 &lt;title&gt; 、同 &lt;para&gt; 一样的 block 元素。示例：
+      </para>
+      <programlisting>
+<![CDATA[
+<section>
+  <title>标题</title>
+
+    <section>
+      <title>子标题 1</title>
+      <para>
+	正文
+      </para>
+    </section>
+
+    <section>
+      <title>子标题 1</title>
+      <para>
+	正文
+      </para>
+    </section>
+
+</section>
+]]>
+      </programlisting>
+    </section>
+
+
+  </section>
+
+  <section>
+    <title>正文</title>
+    <para>
+      <programlisting>
+<![CDATA[
+<para>
+  这里是正文
+</para>
+]]>
+      </programlisting>
+    </para>
+  </section>
+
+  <section id="sect-特殊字符-1">
+    <title>特殊字符</title>
+    <para>
+      特殊字符不能直接表示，需要替换。
+    </para>
+
+    <table>
+      <title id="table-special-characters">特殊字符表示对应表</title>
+      <tgroup cols="2">
+        <thead>
+          <row><entry>特殊字符</entry><entry>如何表示</entry></row>
+        </thead>
+        <tbody>
+          <row><entry>&amp;</entry><entry>&amp;amp;</entry></row>
+          <row><entry>&lt;</entry><entry>&amp;lt;</entry></row>
+          <row><entry>&gt;</entry><entry>&amp;gt;</entry></row>
+          <row><entry>&quot;</entry><entry>&amp;quot;</entry></row>
+          <row><entry>&apos;</entry><entry>&amp;apos;</entry></row>
+	</tbody>
+      </tgroup>
+    </table>
+
+  </section>
+
+
+  <section id="sect-link">
+    <title>链接</title>
+    <para>
+      <ulink url="http://linuxtoy.org">linuxtoy.org</ulink>
+    </para>
+  </section>
+
+
+  <section>
+    <title>列表</title>
+    <section>
+      <title>无序列表</title>
+      <programlisting>
+<![CDATA[
+<itemizedlist>
+  <listitem>
+    <para>列表内容 1</para>
+  </listitem>
+  <listitem>
+    <para>列表内容 2</para>
+  </listitem>
+  <listitem>
+    <para>列表内容 3</para>
+  </listitem>
+</itemizedlist>
+]]>
+      </programlisting>
+      <note>
+	<title>显示效果</title>
+	<itemizedlist>
+	  <listitem>
+	    <para>列表内容 1</para>
+	  </listitem>
+	  <listitem>
+	    <para>列表内容 2</para>
+	  </listitem>
+	  <listitem>
+	    <para>列表内容 3</para>
+	  </listitem>
+	</itemizedlist>
+      </note>
+    </section>
+
+    <section>
+      <title>有序列表</title>
+      <programlisting>
+<![CDATA[
+<orderedlist>
+  <listitem>
+    <para>列表内容 1</para>
+  </listitem>
+  <listitem>
+    <para>列表内容 2</para>
+  </listitem>
+  <listitem>
+    <para>列表内容 3</para>
+  </listitem>
+</orderedlist>
+]]>
+      </programlisting>
+      <note>
+	<title>显示效果</title>
+	<orderedlist>
+	  <listitem>
+	    <para>列表内容 1</para>
+	  </listitem>
+	  <listitem>
+	    <para>列表内容 2</para>
+	  </listitem>
+	  <listitem>
+	    <para>列表内容 3</para>
+	  </listitem>
+	</orderedlist>
+      </note>
+    </section>
+
+    <section>
+      <title>字典列表</title>
+      <programlisting>
+<![CDATA[
+<variablelist>
+  <varlistentry>
+    <term>字段 1</term>
+    <listitem>
+      <para>列表内容 1</para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term>字段 2</term>
+    <listitem>
+      <para>列表内容 2</para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term>字段 3</term>
+    <listitem>
+      <para>列表内容 3</para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+]]>
+      </programlisting>
+
+      <note>
+	<title>显示效果</title>
+	<variablelist>
+	  <varlistentry>
+	    <term>字段 1</term>
+	    <listitem>
+	      <para>列表内容 1</para>
+	    </listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term>字段 2</term>
+	    <listitem>
+	      <para>列表内容 2</para>
+	    </listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term>字段 3</term>
+	    <listitem>
+	      <para>列表内容 3</para>
+	    </listitem>
+	  </varlistentry>
+	</variablelist>
+      </note>
+    </section>
+
+  </section>
+
+  <section>
+    <title>表格</title>
+    <para>
+      下面是一个有两列的表格，cols属性可控制表格的列数：
+      <programlisting>
+<![CDATA[
+<table>
+  <title>表格标题</title>
+  <tgroup cols="2">
+    <thead>
+      <row>
+        <entry>列标题1</entry>
+        <entry>列标题2</entry>
+      </row>
+    </thead>
+    <tbody>
+      <row>
+        <entry>列内容1</entry>
+        <entry>列内容2</entry>
+      </row>
+    </tbody>
+  </tgroup>
+</table>
+]]>
+      </programlisting>
+    </para>
+  </section>
+
+  <section>
+    <title>提示／警告／重要</title>
+    <section>
+      <title>提示 ( note )</title>
+      <para>
+	提示用 &lt;note&gt; 表示，可用多种用途。示例：
+      </para>
+      <programlisting>
+<![CDATA[
+ <note>
+   <title>这里可以自定义标题</title>
+   <para>
+     这是一则提示
+   </para>
+ </note>
+]]>
+      </programlisting>
+
+      <para>
+	显示效果如下：
+	<note>
+	  <title>这里可以自定义标题</title>
+	  <para>这是一则提示</para>
+	</note>
+      </para>
+    </section>
+
+    <section>
+      <title>警告 ( warning )</title>
+      <para>
+	警告用 &lt;warning&gt; 表示，示例：
+      </para>
+      <programlisting>
+<![CDATA[
+<warning>
+  <title>这里可以自定义标题</title>
+  <para>这是一则警告</para>
+</warning>
+]]>
+      </programlisting>
+      <para>
+	显示效果如下：
+	<warning>
+	  <title>这里可以自定义标题</title>
+	  <para>这是一则警告</para>
+	</warning>
+      </para>
+    </section>
+
+    <section>
+      <title>重要 ( important )</title>
+      <para>
+	重要用 &lt;important&gt; 表示，示例：
+      </para>
+      <programlisting>
+<![CDATA[
+<important>
+  <title>这里可以自定义标题</title>
+  <para>这是一则重要信息</para>
+</important>
+]]>
+      </programlisting>
+      <para>
+	显示效果如下：
+	<important>
+	  <title>这里可以自定义标题</title>
+	  <para>这是一则重要信息</para>
+	</important>
+      </para>
+    </section>
+
+  </section>
+
+
+
+  <section>
+    <title>引用</title>
+
+    <section>
+      <title>&lt;screen&gt;</title>
+      <para>
+	屏幕输出可以用 &lt;screen&gt; 表示：
+	<programlisting>
+<![CDATA[
+<screen><command>yum install publican</command></screen>
+]]>
+	</programlisting>
+	<note>
+	  <title>显示效果</title>
+	  <screen><command>yum install publican</command></screen>
+	</note>
+      </para>
+    </section>
+
+
+    <section>
+      <title>&lt;programlisting&gt;</title>
+      <para>代码引用可以用 &lt;programlisting&gt; 表示：</para>
+      <programlisting language="XML">
+<![CDATA[
+<programlisting>
+# uname -a
+</programlisting>
+]]>
+      </programlisting>
+      <note>
+	<title>显示效果</title>
+	<programlisting>
+# uname -a
+	</programlisting>
+      </note>
+
+      <para>如果要引用 XML 代码可以这样：</para>
+      <programlisting language="XML">
+<![CDATA[
+<programlisting language="XML">
+<![CDATA[
+<important>
+  <title>Important Summary</title>
+  <para>Information that will save the reader unnecessary frustration.</para>
+</important>
+]]&gt;
+</programlisting>
+]]>
+      </programlisting>
+      <note>
+	<title>显示效果</title>
+	<programlisting language="XML">
+<![CDATA[
+<important>
+  <title>Important Summary</title>
+  <para>Information that will save the reader unnecessary frustration.</para>
+</important>
+]]>
+	</programlisting>
+      </note>
+
+      <para>引用 python 代码可以这样：</para>
+      <programlisting language="XML">
+<![CDATA[
+<programlisting language="Python">
+def hello(who):
+    print 'Hello, ', who
+</programlisting>
+]]>
+      </programlisting>
+      <note>
+	<title>显示效果</title>
+	<programlisting language="Python">
+def hello(who):
+    print 'Hello, ', who
+	</programlisting>
+      </note>
+
+    </section>
+
+
+  </section>
+  
+</chapter>
+

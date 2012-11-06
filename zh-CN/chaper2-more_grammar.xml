@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "LuoYunCloud_UserGuide.ent">
+%BOOK_ENTITIES;
+]>
+<chapter id="chap-more-grammar">
+  <title>高级语法</title>
+  <para>
+    一些不常用，但很有用的东西
+  </para>
+  <section>
+    <title>表述过程</title>
+    <para>
+      在技术文章的写作时，常常需要描述一系列步骤，通常我们用列表表示。
+      但是如果每个步骤内容太多，用列表还是不方便。在 docbook 中可以用
+      "precedure" 来表示。示例：
+    </para>
+
+    <programlisting>
+<![CDATA[
+<procedure>
+  <title>标题</title>
+  <para>Lead-in sentence</para>
+  <step>
+    <title>第一步标题</title>
+    <para>内容.</para>
+  </step>
+  <step>
+    <title>第二步标题</title>
+    <para>内容.</para>
+  </step>
+</procedure>
+]]>
+    </programlisting>
+
+    <note>
+      <title>显示效果</title>
+      <procedure>
+	<title>标题</title>
+	<para>Lead-in sentence</para>
+	<step>
+	  <title>第一步标题</title>
+	  <para>内容.</para>
+	</step>
+	<step>
+	  <title>第二步标题</title>
+	  <para>内容.</para>
+	</step>
+      </procedure>
+    </note>
+
+  </section>
+  
+</chapter>
+

@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE bookinfo PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "LuoYunCloud_User_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<bookinfo id="book-LuoYunCloud_User_Guide-LuoYunCloud_User_Guide">
+	<title>Publican 使用手册</title>
+	<subtitle>如何简单地使用 Publican</subtitle>
+	<productname>LuoYun Documment Tool</productname>
+	<productnumber>2012</productnumber>
+	<edition>20121106</edition>
+	<pubsnumber>0</pubsnumber>
+	<abstract>
+	  <para>
+	    <command>Publican</command> 是 Fedora 项目开发的一套标准文档（尤其是技术文档）写作工具，底层基于 <command>docbook</command> 。使用 <command>Publican</command> ，　通过分工协作，我们可以方便、快捷地完成一份高质量的文档。
+	  </para>
+	</abstract>
+	<corpauthor>
+		<inlinemediaobject>
+			<imageobject>
+				<imagedata fileref="images/luoyun-logo96.png" format="PNG" />
+			</imageobject>
+		</inlinemediaobject>
+	</corpauthor>
+	<xi:include href="Common_Content/Legal_Notice.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+	<xi:include href="Author_Group.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+</bookinfo>
+
