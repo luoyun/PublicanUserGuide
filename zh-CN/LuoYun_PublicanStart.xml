@@ -7,6 +7,7 @@
 	<xi:include href="Book_Info.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
 	<xi:include href="Preface.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
 	<xi:include href="Install.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+	<xi:include href="publican_usage.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
 	<xi:include href="chaper1-base_grammar.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
 	<xi:include href="chaper2-more_grammar.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
 	<xi:include href="output_html.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />

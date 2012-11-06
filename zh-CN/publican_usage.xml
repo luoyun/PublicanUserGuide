@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "LuoYunCloud_UserGuide.ent">
+%BOOK_ENTITIES;
+]>
+<chapter id="chap-publican-usage">
+  <title>如何使用 <command>Publican</command></title>
+
+  <section id="sect-publican-usage-cmd">
+    <title><command>publican</command> 命令用法</title>
+
+    <procedure>
+
+      <step>
+	<title>创建新一个项目</title>
+	<screen><command>publican create --name LuoYunCloud_UserGuide --lang zh-CN --product LuoYunCloud --version 0.5</command></screen>
+      </step>
+
+      <step>
+	<title>发布项目</title>
+	<para>上面的命令在当前目录创建了 <command>LuoYunCloud_UserGuide</command> 目录，进入这个目录，执行下面命令：</para>
+	<screen><command>publican build --formats html --lang zh-CN</command></screen>
+	<para>
+	  现在用浏览器打开 <command>tmp/zh-CN/html/index.html</command>　文件就能看到默认的 Publican 文档了。
+	</para>
+      </step>
+
+    </procedure>
+
+  </section>
+
+  <section id="sect-publican-configure">
+    <title><command>publican</command> 项目配置</title>
+    <para>在项目目录下有 publican.cfg 文件，可以根据需要修改。我的配置如下：</para>
+    <programlisting>
+# Config::Simple 4.59
+# Mon Nov  5 11:44:37 2012
+
+xml_lang: "zh-CN"
+type: Book
+brand: luoyun
+docname: LuoYun_PublicanStart
+
+chunk_section_depth: 1
+
+prod_url: http://www.luoyun.co
+#doc_url: http://wiki.luoyun.co
+    </programlisting>
+    <para>关于这个文件更详细的配置请参考： <ulink url="http://jfearn.fedorapeople.org/en-US/Publican/2.7/html/Users_Guide/appe-Users_Guide-publican.cfg_parameters.html">publican.cfg parameters</ulink></para>
+  </section>
+  
+</chapter>
+

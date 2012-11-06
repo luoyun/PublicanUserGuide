@@ -103,9 +103,49 @@
 
   <section id="sect-link">
     <title>链接</title>
-    <para>
-      <ulink url="http://linuxtoy.org">linuxtoy.org</ulink>
-    </para>
+
+    <section>
+      <title>ulink</title>
+      <para>外链接</para>
+      <programlisting language="XML">
+<![CDATA[
+<ulink url="http://www.luoyun.co">落云科技主页</ulink>
+]]>
+      </programlisting>
+      <note>
+	<title>显示效果</title>
+	<para><ulink url="http://www.luoyun.co">落云科技主页</ulink></para>
+      </note>
+    </section>
+
+    <section>
+      <title>xref</title>
+      <para>外链接</para>
+      <programlisting language="XML">
+<![CDATA[
+<xref linkend="chap-base-grammar" />
+]]>
+      </programlisting>
+      <note>
+	<title>显示效果</title>
+	<para><xref linkend="chap-base-grammar" /></para>
+      </note>
+    </section>
+
+    <section>
+      <title>email</title>
+      <para>邮件链接</para>
+      <programlisting language="XML">
+<![CDATA[
+<ulink url="mailto:contact@luoyun.co">contact@luoyun.co</ulink>
+]]>
+      </programlisting>
+      <note>
+	<title>显示效果</title>
+	<para><ulink url="mailto:contact@luoyun.co">contact@luoyun.co</ulink></para>
+      </note>
+    </section>
+
   </section>
 
 
@@ -415,8 +455,72 @@ def hello(who):
 
     </section>
 
+  </section>
+
+
+
+  <section>
+    <title>图片</title>
+
+    <section>
+      <title>嵌入图片</title>
+      <programlisting language="XML">
+<![CDATA[
+<mediaobject>
+  <imageobject>
+    <imagedata fileref="images/luoyun-logo96.png" format="PNG"  align="center"/>
+  </imageobject>
+</mediaobject>
+]]>
+      </programlisting>
+
+      <para>显示效果：</para>
+      <mediaobject>
+	<imageobject>
+	  <imagedata fileref="images/luoyun-logo96.png" format="PNG"  align="center"/>
+	</imageobject>
+      </mediaobject>
+    </section>
+
+    <section>
+      <title>行内图片</title>
+      <programlisting language="XML">
+<![CDATA[
+<para>这是落云科技的 Logo :
+  <inlinemediaobject>
+    <imageobject><imagedata fileref="images/luoyun-logo96.png"/></imageobject>
+  </inlinemediaobject>
+  请在宣传时，多多使用！
+</para>
+]]>
+      </programlisting>
+      <para>这是落云科技的 Logo :
+      <inlinemediaobject>
+        <imageobject><imagedata fileref="images/luoyun-logo96.png"/></imageobject>
+      </inlinemediaobject>
+      请在宣传时，多多使用！
+      </para>
+    </section>
 
   </section>
-  
+
+
+  <section>
+    <title>其他标记</title>
+
+    <section>
+      <title>command</title>
+      <programlisting language="XML">
+<![CDATA[
+<command>uname -a</command>
+]]>
+      </programlisting>
+      <note>
+	<title>显示效果</title>
+	<para><command>uname -a</command></para>
+      </note>
+    </section>
+
+  </section>
 </chapter>
 
