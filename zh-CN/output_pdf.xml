@@ -7,7 +7,7 @@
   <title>输出 PDF 格式</title>
 
   <warning>
-    <para>中文 PDF 输出，我测试有问题，有空在试试。请大家先用 HTML 输出。</para>
+    <para>中文 PDF 输出，如果遇到问题，请修改 zh-CN/Book_Info.xml ,　可以先用默认的 Book_Info.xml 测试。</para>
   </warning>
 
   <section id="sect-output-pdf-base">
